@@ -4,7 +4,7 @@ pipeline {
         stage('BUILD') {
             steps{
                  sh '''
-                    sleep 5
+                    sleep 2
                     echo "This is a BUILD stage"
                 '''
             }
@@ -13,16 +13,33 @@ pipeline {
         stage('TEST') {
             steps{
                 sh '''
-                    sleep 6
+                    sleep 3
                     echo "This is a TEST stage"
                 '''
             }
         }
-
-        stage('DEPLOY') {
+        
+        stage('UAT TESTING') {
+            steps{
+                sh '''
+                    sleep 4
+                    echo "This is a UAT TESTING stage"
+                '''
+            }
+        }
+        
+        stage('DELIVERY') {
             steps{
                 sh '''
                     sleep 5
+                    echo "This is a DELIVERY stage"
+                '''
+            }
+        }
+        stage('DEPLOY') {
+            steps{
+                sh '''
+                    sleep 6
                     echo "This is a DEPLOY stage"
                     exit 1
                 '''
