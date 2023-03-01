@@ -5,17 +5,17 @@ pipeline {
             parallel {
                 stage('Job A') {
                     steps {
-                        sh 'this is job A'
+                        echo "this is job A"
                     }
                 }
                 stage('Job B') {
                     steps {
-                        sh 'this is job B'
+                        echo "this is job B"
                     }
                 }
                 stage('Job C') {
                     steps {
-                        sh 'this is job c'
+                        echo "this is job c"
                     }
                 }
             }
